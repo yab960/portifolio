@@ -537,7 +537,7 @@
         // Theme toggle
         const themeToggle = document.querySelector('.theme-toggle');
         themeToggle.addEventListener('click', () => {
-            document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+            document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'dark' : 'dark';
             themeToggle.textContent = document.body.dataset.theme === 'dark' 
                 ? translations[currentLang]['theme-toggle'].replace('Dark', 'Dark') 
                 : translations[currentLang]['theme-toggle'].replace('Dark', 'Dark');
