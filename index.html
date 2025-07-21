@@ -358,7 +358,7 @@
             <a href="#contact" data-lang-key="nav-contact">Contact</a>
         </div>
         <div class="controls">
-            <button class="theme-toggle" data-lang-key="theme-toggle">Dark </button>
+            <button class="theme-toggle" data-lang-key="theme-toggle"> </button>
             <button class="language-toggle">Es</button>
         </div>
     </nav>
@@ -539,8 +539,8 @@
         themeToggle.addEventListener('click', () => {
             document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
             themeToggle.textContent = document.body.dataset.theme === 'dark' 
-                ? translations[currentLang]['theme-toggle'].replace('Dark', 'Light') 
-                : translations[currentLang]['theme-toggle'].replace('Light', 'Dark');
+                ? translations[currentLang]['theme-toggle'].replace('Dark', 'Dark') 
+                : translations[currentLang]['theme-toggle'].replace('Dark', 'Dark');
         });
 
         // Language toggle
