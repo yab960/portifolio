@@ -359,7 +359,7 @@
         </div>
         <div class="controls">
             <button class="theme-toggle" data-lang-key="theme-toggle">Dark Mode</button>
-            <button class="language-toggle">Español</button>
+            <button class="language-toggle">Es</button>
         </div>
     </nav>
 
@@ -548,7 +548,7 @@
         const languageToggle = document.querySelector('.language-toggle');
         languageToggle.addEventListener('click', () => {
             currentLang = currentLang === 'en' ? 'es' : 'en';
-            languageToggle.textContent = currentLang === 'en' ? 'Español' : 'English';
+            languageToggle.textContent = currentLang === 'en' ? 'Es' : 'En';
             updateLanguage();
         });
 
