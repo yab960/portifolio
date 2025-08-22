@@ -62,6 +62,21 @@
 html {
   scroll-behavior: smooth;
 }
+@keyframes disappear{
+    from{
+        opacity: 1;
+        transform: translateX(0px);
+
+    }
+    to{
+        opacity: 0;
+        transform: translateX(-1000px);
+    }
+
+}
+/* .group:hover>.disappear{
+    animation: disappear 500ms linear;
+} */
 </style>
 <body class=" bg-[url('bg-a.jpg')] md:bg-[url('bg.jpg')] bg-cover bg-center bg-no-repeat md:bg-fixed relative text-gray-50">
     <div id="menu_btn" class=" px-2 z-30 active:scale-125  text-gray-50 transition-all z-50 md:hidden fixed top-0 right-0  " >
@@ -89,7 +104,7 @@ html {
     </nav>
 
     <section id="home" class="w-full md:w-[80%] relative text-center flex justify-center mx-auto h-screen flex-col md:flex-row items-center gap-8 px-4 md:px-0">
-        <img class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover shadow-lg border-4 border-slate-500/40" src="my.jpg" alt="Yabsra Sherif">
+        <img class="hover:content-[url('anime.png')] transition-all hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] w-48 h-48 md:w-64 md:h-64 rounded-full object-cover shadow-lg border-4 border-slate-500/40" src="my.jpg" alt="Yabsra Sherif">
         <p class="text-lg md:text-xl text-justify max-w-md">
             Information Systems graduate with certifications in Cisco Cybersecurity, Responsive Web Design, and JavaScript Algorithms. Skilled in IT Systems, Networking, and Programming.
         </p>
@@ -98,21 +113,41 @@ html {
     </section>
     <section id="project" class="justify-center flex flex-col p-3 mx-auto h-screen">
         <p class="self-center roboto-slab text-3xl p-6">My Projects</p>
-            <div class="grid grid-flow-col gap-6 auto-cols-[18rem] overflow-x-auto custom-scrollbar pb-6">
-                <div class=" flex-none w-72 h-80 relative bg-slate-800/60 backdrop-blur-lg border border-slate-400 rounded-2xl p-4 text-center shadow-xl hover:shadow-2xl hover:scale-105 transition-all">
-                    <img class="h-[60%] w-full object-cover rounded-lg" src="food.jpg" alt="Food Delivery App">
-                    <p class="absolute bottom-0 inset-x-0 text-center mb-12 text-xl font-bold text-gray-50">Food Delivery App</p>
-                    <p class="absolute bottom-0 inset-x-0 text-center mb-4 text-sm text-gray-300">A responsive app built with HTML, JS, Tailwind and  for seamless food ordering.</p>
+            <div class="grid grid-flow-col gap-6 auto-cols-[18rem] overflow-x-auto custom-scrollbar p-6">
+                <div class="group flex-none w-72 h-80 relative bg-slate-800/60 backdrop-blur-lg border border-slate-400 rounded-2xl p-4 text-center shadow-xl hover:shadow-2xl hover:scale-105 transition-all">
+                    <img class="group-hover:hidden transition-all  h-[60%] w-full object-cover rounded-lg" src="food.jpg" alt="Food Delivery App">
+                    <div class="hidden group-hover:block " >
+                        <p class=" roboto-slab font-bold" >Features Include</p>
+                        <ol type="1" class=" roboto-slab p-3 list-decimal space-y-2">
+                            <li>Ip Logging</li>
+                            <li>Location Tracking</li>
+                            <li>Email Api Integration</li>
+                            <li>Chapa(Telebirr)Api Integration</li>
+                            <li>Role Based Dashboard</li>
+                            <li>Rout Optimization</li>
+                        </ol>
+                    </div>
+                    <p class="group-hover:hidden absolute bottom-0 inset-x-0 text-center mb-12 text-xl font-bold text-gray-50">Food Delivery App</p>
+                    <p class="group-hover:hidden absolute bottom-0 inset-x-0 text-center mb-4 text-sm text-gray-300">A responsive app built with HTML, JS, Tailwind and  for seamless food ordering.</p>
+                </div>
+                <div class=" group flex-none w-72 h-80 relative bg-slate-800/60 backdrop-blur-lg border border-slate-400 rounded-2xl p-4 text-center shadow-xl hover:shadow-2xl hover:scale-105 transition-all">
+                    <img class="h-[60%] w-full group-hover:hidden object-cover rounded-lg" src="des.jpg" alt="Portfolio Website">
+                    <p class="absolute bottom-0 inset-x-0 text-center group-hover:hidden mb-12 text-xl font-bold text-gray-50">DES Encryption App</p>
+                    <p class="absolute bottom-0 inset-x-0 text-center group-hover:hidden mb-4 text-sm text-gray-300">Text Encryption App Based on DES Method Built With Javascript and HTML</p>
+                    <div class="hidden group-hover:block " >
+                        <p class=" roboto-slab font-bold" >Features Include</p>
+                        <ol type="1" class=" roboto-slab p-3 list-decimal space-y-2">
+                            <li>Encryption</li>
+                            <li>Decryption</li>
+                            <li>Provide Full Step Preview</li>
+                        </ol>
+                    </div>
                 </div>
                 <div class="flex-none w-72 h-80 relative bg-slate-800/60 backdrop-blur-lg border border-slate-400 rounded-2xl p-4 text-center shadow-xl hover:shadow-2xl hover:scale-105 transition-all">
-                    <img class="h-[60%] w-full object-cover rounded-lg" src="des.jpg" alt="Portfolio Website">
-                    <p class="absolute bottom-0 inset-x-0 text-center mb-12 text-xl font-bold text-gray-50">DES Encryption App</p>
-                    <p class="absolute bottom-0 inset-x-0 text-center mb-4 text-sm text-gray-300">Text Encryption App Based on DES Method Built With Javascript and HTML</p>
-                </div>
-                <div class="flex-none w-72 h-80 relative bg-slate-800/60 backdrop-blur-lg border border-slate-400 rounded-2xl p-4 text-center shadow-xl hover:shadow-2xl hover:scale-105 transition-all">
-                    <img class="h-[60%] w-full object-cover rounded-lg" src="https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.3zqYJ0k1l2m3n4o5p6q7r8HaEK%3Fpid%3DApi&sp=1755772050T1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0" alt="Cybersecurity Dashboard">
-                    <p class="absolute bottom-0 inset-x-0 text-center mb-12 text-xl font-bold text-gray-50">Cybersecurity Dashboard</p>
-                    <p class="absolute bottom-0 inset-x-0 text-center mb-4 text-sm text-gray-300">A tool for monitoring network threats using Python and Cisco APIs.</p>
+                    <img class="h-[60%] w-full object-cover rounded-lg" src="game.png">
+                    <p class="absolute bottom-0 inset-x-0 text-center mb-12 text-xl font-bold text-gray-50">Great Ethiopia</p>
+                    ON PROGRESS
+                    <p class="absolute bottom-0 inset-x-0 text-center mb-4 text-sm text-gray-300">A top down war Game Themed Around The Anicent Great History Of Ethiopia.</p>
                 </div>    
             </div>
     </section>
@@ -140,9 +175,17 @@ html {
             <p class="text-center roboto-slab text-3xl p-6">Certifications</p>
             <div class="custom-scrollbar overflow-y-auto h-[35%] md:h-[25%]">
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    <div class="min-h-16 bg-blue-600/20 backdrop-blur-sm rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all">Cisco Cybersecurity</div>
-                    <div class="min-h-16 bg-blue-600/20 backdrop-blur-sm rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all">Responsive Web Design (FCC)</div>
-                    <div class="min-h-16 bg-blue-600/20 backdrop-blur-sm rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all">JavaScript Algorithms (FCC)</div>
+                    <a href="cisco.png" target="_blank">
+                        <div class="min-h-16 bg-blue-600/20 backdrop-blur-sm rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all">Cisco Cybersecurity</div>
+                    </a>
+                    <a href="cisco.png" target="_blank">
+                        <div class="min-h-16 bg-blue-600/20 backdrop-blur-sm rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all">Responsive Web Design (FCC)</div>
+                    </a>
+
+                    <a href="cisco.png" target="_blank">
+                        <div class="min-h-16 bg-blue-600/20 backdrop-blur-sm rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all">JavaScript Algorithms (FCC)</div>
+                    </a>
+
                     <div class="min-h-16 bg-blue-600/20 backdrop-blur-sm rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all">CCNA (In Progress)</div>
 
                 </div>
@@ -165,7 +208,7 @@ html {
                 </div>
                 <div class="flex">
                     <img class="w-6 h-6" src="ico/github.png" alt="">
-                    <p class="px-2" >GitHub: github.com/yabsra</p>
+                    <p class="px-2" >GitHub: github.com/yab960</p>
                 </div>
                 <div class="flex">
                     <img class="w-6 h-6" src="ico/phone-call.png" alt="">
