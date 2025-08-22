@@ -43,6 +43,25 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #16a34a;      /* hover color */
 }
+
+@keyframes appear{
+    from{
+        opacity: 0;
+        transform:translateX(-100px);
+    }
+    to{
+        opacity: 1;
+        transform:translateX(0px);
+    }
+}
+.card{
+    animation: appear  linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 30%;
+}
+html {
+  scroll-behavior: smooth;
+}
 </style>
 <body class=" bg-[url('bg-a.jpg')] md:bg-[url('bg.jpg')] bg-cover bg-center bg-no-repeat md:bg-fixed relative text-gray-50">
     <div id="menu_btn" class=" px-2 z-30 active:scale-125  text-gray-50 transition-all z-50 md:hidden fixed top-0 right-0  " >
@@ -52,10 +71,10 @@
 
     <div id="mobile_menu_container" class=" z-20 -translate-x-full transition-all duration-300  md:hidden fixed top-0 left-0 w-1/2 h-screen bg-slate-800/40 backdrop-blur-md border-2 border-slate-500 rounded-r-3xl  to-gray-50" >
          <ul id="menu_list" class=" mt-12  space-y-12  p-3  font-bold text-gray-50 " >
-            <li><a class=" border-2 rounded-2xl border-gray-50  hover:scale-125 transition-all flex flex-col items-center" href="#home"><span class="material-symbols-outlined text-gray-50 font-bold " >home</span><p class="" >Home</p></a></li>
-            <li><a class=" border-2 rounded-2xl border-gray-50  hover:scale-125 transition-all flex flex-col items-center" href="#project"><span class="material-symbols-outlined text-gray-50 font-bold ">desktop_windows</span><p>Projects</p></a></li>
-            <li><a class=" border-2 rounded-2xl border-gray-50  hover:scale-125 transition-all flex flex-col items-center" href="#skill"><span class="material-symbols-outlined text-gray-50 font-bold " >person_play</span><p>Skills</p></a></li>
-            <li><a class=" border-2 rounded-2xl border-gray-50  hover:scale-125 transition-all flex flex-col items-center" href="#contact"><span class="material-symbols-outlined text-gray-50 font-bold " >mail</span><p>Contact</p></a></li>
+            <li><a class="menu-link border-2 rounded-2xl border-gray-50  hover:scale-125 transition-all flex flex-col items-center" href="#home"><span class="material-symbols-outlined text-gray-50 font-bold " >home</span><p class="" >Home</p></a></li>
+            <li><a class="menu-link border-2 rounded-2xl border-gray-50  hover:scale-125 transition-all flex flex-col items-center" href="#project"><span class="material-symbols-outlined text-gray-50 font-bold ">desktop_windows</span><p>Projects</p></a></li>
+            <li><a class="menu-link border-2 rounded-2xl border-gray-50  hover:scale-125 transition-all flex flex-col items-center" href="#skill"><span class="material-symbols-outlined text-gray-50 font-bold " >person_play</span><p>Skills</p></a></li>
+            <li><a class="menu-link border-2 rounded-2xl border-gray-50  hover:scale-125 transition-all flex flex-col items-center" href="#contact"><span class="material-symbols-outlined text-gray-50 font-bold " >mail</span><p>Contact</p></a></li>
         </ul>
     </div>
     
@@ -75,12 +94,12 @@
             Information Systems graduate with certifications in Cisco Cybersecurity, Responsive Web Design, and JavaScript Algorithms. Skilled in IT Systems, Networking, and Programming.
         </p>
 
-        <span class="animate-bounce material-symbols-outlined absolute bottom-12 text-[300%] border-gray-700 border-[5px] rounded-full hover:scale-125 transition-all">arrow_downward_alt</span>
+        <a href="#project"  class="animate-bounce material-symbols-outlined absolute bottom-12 text-[300%] border-gray-700 border-[5px] rounded-full hover:scale-125 transition-all">arrow_downward_alt</a>
     </section>
     <section id="project" class="justify-center flex flex-col p-3 mx-auto h-screen">
         <p class="self-center roboto-slab text-3xl p-6">My Projects</p>
             <div class="grid grid-flow-col gap-6 auto-cols-[18rem] overflow-x-auto custom-scrollbar pb-6">
-                <div class="flex-none w-72 h-80 relative bg-slate-800/60 backdrop-blur-lg border border-slate-400 rounded-2xl p-4 text-center shadow-xl hover:shadow-2xl hover:scale-105 transition-all">
+                <div class=" flex-none w-72 h-80 relative bg-slate-800/60 backdrop-blur-lg border border-slate-400 rounded-2xl p-4 text-center shadow-xl hover:shadow-2xl hover:scale-105 transition-all">
                     <img class="h-[60%] w-full object-cover rounded-lg" src="food.jpg" alt="Food Delivery App">
                     <p class="absolute bottom-0 inset-x-0 text-center mb-12 text-xl font-bold text-gray-50">Food Delivery App</p>
                     <p class="absolute bottom-0 inset-x-0 text-center mb-4 text-sm text-gray-300">A responsive app built with HTML, JS, Tailwind and  for seamless food ordering.</p>
@@ -101,20 +120,20 @@
             <p class="text-center roboto-slab text-3xl p-6">Technical Skills</p>
             <div class="custom-scrollbar overflow-y-auto h-[35%] md:h-[25%] mb-8">
                 <div class="grid grid-cols-5  md:grid-cols-6 lg:grid-cols-8 gap-4">
-                    <div class="min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/html-5.png" alt=""> <p>HTML5</p></div>
-                    <div class="min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/css-3.png" alt=""> <p>CSS3</p></div>
-                    <div class="min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/js.png" alt=""> <p>JS</p></div>
-                    <div class="min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/physics.png" alt=""> <p>React</p></div>
-                    <div class="min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/php.png" alt=""> <p>PHP</p></div>
-                    <div class="min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/node-js.png" alt=""> <p>Node.js</p></div>
-                    <div class="min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/python.png" alt=""> <p>Python</p></div>
-                    <div class="min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/c-.png" alt=""> <p>C++</p></div>
-                    <div class="min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/c-sharp.png" alt=""> <p>C#</p></div>
-                    <div class="min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/java.png" alt=""> <p>Java</p></div>
-                    <div class="min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/git.png" alt=""> <p>Git</p></div>
-                    <div class="min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/github.png" alt=""> <p>GitHub</p></div>
-                    <div class="min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/figma.png" alt=""> <p>Figma</p></div>
-                    <div class="min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/after-effects.png" alt=""> <p>Adobe</p></div>
+                    <div class="card  min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/html-5.png" alt=""> <p>HTML5</p></div>
+                    <div class="card min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/css-3.png" alt=""> <p>CSS3</p></div>
+                    <div class="card min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/js.png" alt=""> <p>JS</p></div>
+                    <div class="card min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/physics.png" alt=""> <p>React</p></div>
+                    <div class="card min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/php.png" alt=""> <p>PHP</p></div>
+                    <div class="card min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/node-js.png" alt=""> <p>Node.js</p></div>
+                    <div class="card min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/python.png" alt=""> <p>Python</p></div>
+                    <div class="card min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/c-.png" alt=""> <p>C++</p></div>
+                    <div class="card min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/c-sharp.png" alt=""> <p>C#</p></div>
+                    <div class="card min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/java.png" alt=""> <p>Java</p></div>
+                    <div class="card min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/git.png" alt=""> <p>Git</p></div>
+                    <div class="card min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/github.png" alt=""> <p>GitHub</p></div>
+                    <div class="card min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/figma.png" alt=""> <p>Figma</p></div>
+                    <div class="card min-h-16 bg-slate-600/30 backdrop-blur-md rounded-lg flex items-center justify-center text-center font-bold shadow-md hover:scale-105 transition-all p-2 flex flex-col "><img class="w-6" src="ico/after-effects.png" alt=""> <p>Adobe</p></div>
 
                 </div>
             </div>
@@ -177,4 +196,20 @@
 
         }
     })
+    document.querySelectorAll(".menu-link").forEach(link => {
+        link.addEventListener("click", () => {
+            mobile_menu_container.classList.add('-translate-x-full')
+            mobile_menu_container.classList.remove('translate-x-[0%]')
+            menu_icon.innerHTML='menu'
+            });
+    });
+    document.addEventListener('click',(e)=>{
+        if(!mobile_menu_container.contains(e.target) && !menu_btn.contains(e.target)){
+            mobile_menu_container.classList.add('-translate-x-full')
+            mobile_menu_container.classList.remove('translate-x-[0%]')
+            menu_icon.innerHTML='menu'
+        }
+
+    })
+   
 </script>
